@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Peyda Fonts*/
+@layer base {
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 100;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-Thin.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Thin.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Thin.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 200;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-ExtraLight.woff2')
+				format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-ExtraLight.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-ExtraLight.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 300;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-Light.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Light.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Light.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-Regular.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Regular.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Regular.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 500;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-Medium.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Medium.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Medium.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 600;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-SemiBold.woff2')
+				format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-SemiBold.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-SemiBold.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-Bold.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Bold.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Bold.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 800;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-ExtraBold.woff2')
+				format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-ExtraBold.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-ExtraBold.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: 'Peyda-1';
+		font-style: normal;
+		font-weight: 900;
+		font-display: swap;
+		src: url('../fonts/peyda/woff2/PeydaWebFaNum-Black.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Black.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Black.woff') format('woff');
+	}
+}
+
+@layer base {
+	* {
+		font-family: 'Peyda-1';
+		font-feature-settings: 'ss01' 1;
+		font-variant-ligatures: discretionary-ligatures;
+	}
+}
+
+/*autofill fix*/
+@layer base {
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active {
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: #fff;
+		transition: background-color 5000s ease-in-out 0s;
+
+		box-shadow: inset 0 0 20px 20px rgb(28 25 23);
+		border-radius: inherit;
+	}
+}
+
+/*icon size*/
+@layer base {
+	.icon {
+		@apply size-6;
+	}
+}
+
+/*forms color*/
+@layer base {
+	[type='text']:focus,
+	input:where(:not([type])):focus,
+	[type='email']:focus,
+	[type='url']:focus,
+	[type='password']:focus,
+	[type='number']:focus,
+	[type='date']:focus,
+	[type='datetime-local']:focus,
+	[type='month']:focus,
+	[type='search']:focus,
+	[type='tel']:focus,
+	[type='time']:focus,
+	[type='week']:focus,
+	[multiple]:focus,
+	textarea:focus,
+	select:focus {
+		--tw-ring-color: #991b1b !important;
+		@apply border-red-800;
+	}
+}
+
+/*Buttons*/
+@layer components {
+	.primary-btn {
+		@apply bg-gradient-to-b from-red-700 to-red-950 hover:brightness-90 transition-all rounded-full px-6 py-2 flex items-center;
+	}
+}
+
+/*Selected*/
+@layer base {
+	::selection {
+		@apply bg-red-800 text-white;
+	}
+}
+
+/*Plyr Colors*/
+@layer base {
+	:root {
+		--plyr-color-main: #991b1b;
+	}
+}
+
+/*Single Product*/
+@layer base {
+	.woocommerce #content div.product div.images,
+	.woocommerce div.product div.images,
+	.woocommerce-page #content div.product div.images,
+	.woocommerce-page div.product div.images {
+		float: none !important;
+		width: 100%;
+	}
+
+	.woocommerce:where(body:not(.woocommerce-uses-block-theme))
+		div.product
+		p.price,
+	.woocommerce:where(body:not(.woocommerce-uses-block-theme))
+		div.product
+		span.price {
+		color: #fff !important;
+	}
+}

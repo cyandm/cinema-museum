@@ -1,0 +1,30 @@
+#general
+-- height of main must be dynamic
+-- loading via animation
+
+#header 
+-- sign in / log in link
+** mobile menu close via click on out
+-- search on mobile is not correct to figma
+
+#footer
+-- on mobile image is not appear
+
+#archive - video
+-- on hero just image not video
+-- on desktop we have select option and we must be have chips
+** cards responsive on tablet
+
+#single video
+-- add multiple video and play
+-- on download markup in video (new feature)
+
+#search
+-- other post types must be added
+
+#preloader
+-- add correct timeline to preloader
+
+#homepage
+-- tablet size is not correct
+-- sidebar on mobile is not developed

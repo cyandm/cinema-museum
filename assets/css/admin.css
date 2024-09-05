@@ -1,0 +1,18 @@
+@font-face {
+	font-family: Peyda;
+	src: url(../fonts/peyda/woff/PeydaWebFaNum-Medium.woff);
+}
+
+*:not(i, .ab-icon, .dashicons) {
+	font-family: Peyda !important;
+}
+
+table#form-metabox {
+	border-spacing: 0.25rem;
+	width: 100%;
+}
+
+table#form-metabox td {
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+}

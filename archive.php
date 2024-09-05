@@ -1,0 +1,1 @@
+for this post type archive is not ready!
