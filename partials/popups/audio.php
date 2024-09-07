@@ -1,7 +1,7 @@
 <?php
 $id = $args['post-id'] ?? '';
 $audio = get_field( 'file', $id );
-$poster = get_field( 'file_poster', $id );
+// $poster = get_field( 'file_poster', $id );
 
 if ( ! $audio )
 	return;
@@ -15,15 +15,14 @@ if ( ! $audio )
 		</svg>
 	</div>
 
-	<video class="plyr-js"
-		   playsinline
-		   controls
-		   data-poster="<?php echo wp_get_attachment_url( $poster ) ?>">
-
+	<audio class="plyr-js"
+		   controls>
 		<source src="<?php echo $audio['url'] ?> "
 				type="<?php echo $audio['mime_type'] ?>" />
+	</audio>
 
-	</video>
+
+
 
 
 	<div class="absolute -bottom-8 right-4">

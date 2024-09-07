@@ -12,6 +12,7 @@ if ( $post_type === CYN_VIDEO_POST_TYPE ) {
 		'download' => __( 'پخش پادکست', 'cyn-dm' ),
 	];
 }
+
 ?>
 
 <div class="container  grid md:gap-4 grid-cols-3">

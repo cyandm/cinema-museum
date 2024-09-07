@@ -10,3 +10,4 @@ import './popup';
 import './preloader';
 import './select-box';
 import './video';
+import './podcast';

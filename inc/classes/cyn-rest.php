@@ -38,6 +38,17 @@ class cyn_rest {
 
 			]
 		);
+
+		register_rest_route(
+			'cyn-api/v1',
+			'/popup-audio',
+			[ 
+				'methods' => 'POST',
+				'callback' => [ $this, 'handle_popup_audio' ],
+				'permission_callback' => '__return_true'
+
+			]
+		);
 	}
 
 	public function handle_contact_form( WP_REST_Request $request ) {
@@ -88,6 +99,19 @@ class cyn_rest {
 
 		ob_start();
 		cyn_get_popup( 'video', [ 'post-id' => $id ] );
+		$innerHTML = ob_get_clean();
+
+		$res->set_data( [ 'innerHTML' => $innerHTML ] );
+		return $res;
+	}
+
+	public function handle_popup_audio( WP_REST_Request $request ) {
+
+		$res = new WP_REST_Response();
+		$id = $request->get_body_params()['id'];
+
+		ob_start();
+		cyn_get_popup( 'audio', [ 'post-id' => $id ] );
 		$innerHTML = ob_get_clean();
 
 		$res->set_data( [ 'innerHTML' => $innerHTML ] );
