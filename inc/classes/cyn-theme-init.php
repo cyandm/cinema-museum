@@ -24,7 +24,7 @@ if ( ! class_exists( 'cyn_theme_init' ) ) {
 
 
 		public function cyn_theme_init() {
-			add_filter( 'use_block_editor_for_post', '__return_false' );
+			// add_filter( 'use_block_editor_for_post', '__return_false' );
 			add_filter( 'login_errors', function () {
 				return null;
 			} );
@@ -46,12 +46,12 @@ if ( ! class_exists( 'cyn_theme_init' ) ) {
 		public function cyn_enqueue_files() {
 
 			$css_path = $this->build ? '/assets/css/final-tailwind.min.css' : '/assets/css/final-tailwind.css';
-			$js_path = $this->build ? '/assets/js/dist/scripts.min.js' : '/assets/js/dist/scripts.bundle.js';
+			$js_path = $this->build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';
 
 			wp_enqueue_style( 'cyn-theme', CYN_THEME_URI . $css_path, [], $this->ver );
 			wp_enqueue_style( 'cyn-theme-plyr', CYN_THEME_URI . '/assets/css/libs/plyr.css', [ 'cyn-theme' ], '3.7.8' );
 			wp_enqueue_style( 'cyn-style', get_stylesheet_uri() );
-			wp_dequeue_style( 'wp-block-library' );
+			// wp_dequeue_style( 'wp-block-library' );
 
 			wp_enqueue_script( 'cyn-theme', CYN_THEME_URI . $js_path, [ 'jquery' ], $this->ver, true );
 			wp_localize_script( 'cyn-theme', 'restDetails', [ 

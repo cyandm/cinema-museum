@@ -41,7 +41,7 @@ $is_login = is_user_logged_in();
 				<input type="text"
 					   name="s"
 					   value="<?php the_search_query() ?>"
-					   class="bg-transparent text-white border-none focus:ring-0"
+					   class="bg-transparent text-white border-none p-0 focus:ring-0"
 					   placeholder="<?php _e( 'جستجو کنید', 'cyn-dm' ) ?>"
 					   class="border-none">
 
@@ -59,7 +59,7 @@ $is_login = is_user_logged_in();
 
 			<?php if ( $is_login ) : ?>
 				<div
-					 class="border p-3 absolute top-14 right-0 bg-black min-w-52 border-red-900 opacity-0 translate-y-2 pointer-events-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto z-10 transition-all flex flex-col gap-2 rounded-lg">
+					 class="border p-3 absolute top-11 right-0 bg-black min-w-52 border-red-900 opacity-0 translate-y-2 pointer-events-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto z-10 transition-all flex flex-col gap-2 rounded-lg">
 					<?php foreach ( $login_menu as $index => $menu ) : ?>
 						<a href="<?php echo $menu->url ?>"
 						   class="bg-stone-800 hover:bg-stone-700 block p-2 rounded-md text-white/65 hover:text-white transition-colors">

@@ -25,10 +25,11 @@ if ( ! $notices ) {
 
 ?>
 
-<ul class="woocommerce-error" role="alert">
+<ul class="woocommerce-error bg-stone-900 text-white rounded-md"
+	role="alert">
 	<?php foreach ( $notices as $notice ) : ?>
 		<li<?php echo wc_get_notice_data_attr( $notice ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<?php echo wc_kses_notice( $notice['notice'] ); ?>
-		</li>
-	<?php endforeach; ?>
+			</li>
+		<?php endforeach; ?>
 </ul>

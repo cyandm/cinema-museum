@@ -7,3 +7,5 @@ function plyr() {
 }
 
 plyr();
+
+window.addEventListener('cynChangePopup', plyr);

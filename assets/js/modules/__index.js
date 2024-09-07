@@ -8,3 +8,5 @@ import './swiper';
 import './image-card';
 import './popup';
 import './preloader';
+import './select-box';
+import './video';

@@ -4,7 +4,11 @@ import { setCookie } from '../utils/functions';
 function preloaderAnimation() {
 	const preloaderTimeline = gsap.timeline();
 
-	preloaderTimeline.to('.preloader .logo', { scale: 3.5, duration: 1.5 });
+	preloaderTimeline.fromTo(
+		'.preloader .logo',
+		{ scale: 0.5 },
+		{ scale: 1.5, duration: 1.5 }
+	);
 	preloaderTimeline.to('.preloader .logo', { opacity: 0, duration: 1 });
 	preloaderTimeline.to('.preloader .preloader_image', {
 		opacity: 1,

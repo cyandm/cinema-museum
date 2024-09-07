@@ -2,10 +2,9 @@
 $post_id = $args['post-id'] ?? get_the_ID();
 ?>
 
-<a href="<?php echo get_permalink( $post_id ) ?>"
-   class="group ">
+<a class="group ">
 	<div
-		 class=" rounded-xl h-30 min-w-80 bg-cover p-4 flex flex-col justify-end after:transition-all after:duration-300 border border-white/45 hover:border-red-600 transition-all">
+		 class="rounded-xl h-30 bg-cover p-4 flex flex-col justify-end after:transition-all after:duration-300 border border-white/15 hover:border-red-600 transition-all">
 
 
 		<div class="grid gap-2">

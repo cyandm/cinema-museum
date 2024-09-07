@@ -191,3 +191,88 @@
 		color: #fff !important;
 	}
 }
+
+/*inputs*/
+@layer base {
+	[type='text'],
+	input:where(:not([type])),
+	[type='email'],
+	[type='url'],
+	[type='password'],
+	[type='number'],
+	[type='date'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='week'],
+	[multiple],
+	textarea,
+	select {
+		@apply !bg-stone-900;
+	}
+}
+
+/*payment*/
+@layer base {
+	#add_payment_method #payment,
+	.woocommerce-cart #payment,
+	.woocommerce-checkout #payment {
+		@apply !bg-stone-800;
+	}
+}
+
+@layer base {
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		#respond
+		input#submit.alt,
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		a.button.alt,
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		button.button.alt,
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		input.button.alt,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		#respond
+		input#submit.alt,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		a.button.alt,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		button.button.alt,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		input.button.alt {
+		@apply !bg-red-800;
+	}
+}
+
+@layer base {
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		#respond
+		input#submit,
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		a.button,
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		button.button,
+	.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles))
+		input.button,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		#respond
+		input#submit,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		a.button,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		button.button,
+	:where(body:not(.woocommerce-block-theme-has-button-styles))
+		.woocommerce
+		input.button {
+		@apply !bg-white/15 !text-white !font-light;
+	}
+}

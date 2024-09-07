@@ -12,6 +12,7 @@ if ( ! class_exists( 'cyn_customize' ) ) {
 			$this->cyn_register_panel_general( $wp_customize );
 			$this->cyn_register_panel_footer( $wp_customize );
 			$this->cyn_register_panel_archive( $wp_customize );
+			$this->cyn_register_panel_custom_code( $wp_customize );
 
 
 		}
@@ -147,6 +148,30 @@ if ( ! class_exists( 'cyn_customize' ) ) {
 
 
 			$wp_customize->add_section(
+				'footer_col_1',
+				[ 
+					'title' => 'تنظیمات ستون 1',
+					'priority' => 1,
+					'panel' => 'footer'
+				]
+			);
+
+			$this->cyn_add_control( $wp_customize, 'footer_col_1', 'text', 'footer_column_1_title', 'عنوان' );
+
+			$wp_customize->add_section(
+				'footer_col_2',
+				[ 
+					'title' => 'تنظیمات ستون 2',
+					'priority' => 1,
+					'panel' => 'footer'
+				]
+			);
+
+			$this->cyn_add_control( $wp_customize, 'footer_col_2', 'text', 'footer_column_2_title', 'عنوان' );
+
+
+
+			$wp_customize->add_section(
 				'footer_col_3',
 				[ 
 					'title' => 'تنظیمات ستون 3',
@@ -234,6 +259,68 @@ if ( ! class_exists( 'cyn_customize' ) ) {
 
 			$this->cyn_add_control( $wp_customize, 'archive_employer', 'file', 'archive_employer_img', 'تصویر هیرو' );
 
+			$wp_customize->add_section(
+				'archive_products',
+				[ 
+					'title' => 'تنظیمات صفحه آرشیو دوره ها',
+					'priority' => 1,
+					'panel' => 'archive'
+				]
+			);
+
+			$this->cyn_add_control( $wp_customize, 'archive_products', 'file', 'archive_products_img', 'تصویر هیرو' );
+
+		}
+
+		private function cyn_register_panel_custom_code( $wp_customize ) {
+			$wp_customize->add_panel(
+				'custom_code',
+				[ 
+					'title' => 'تنظیمات کدهای سفارشی',
+					'priority' => 1
+				]
+			);
+
+			$wp_customize->add_section(
+				'head_section',
+				[ 
+					'title' => 'داخل تگ head',
+					'priority' => 1,
+					'panel' => 'custom_code'
+				]
+			);
+
+
+			for ( $i = 1; $i <= 10; $i++ ) {
+				$this->cyn_add_control( $wp_customize, 'head_section', 'textarea', "cyn_head_code_$i", "کد سفارشی $i" );
+			}
+
+			$wp_customize->add_section(
+				'start_body_section',
+				[ 
+					'title' => 'ابتدای تگ body',
+					'priority' => 1,
+					'panel' => 'custom_code'
+				]
+			);
+
+			for ( $i = 1; $i <= 10; $i++ ) {
+				$this->cyn_add_control( $wp_customize, 'start_body_section', 'textarea', "cyn_start_body_code_$i", "کد سفارشی $i" );
+			}
+
+
+			$wp_customize->add_section(
+				'end_body_section',
+				[ 
+					'title' => 'انتهای تگ body',
+					'priority' => 1,
+					'panel' => 'custom_code'
+				]
+			);
+
+			for ( $i = 1; $i <= 10; $i++ ) {
+				$this->cyn_add_control( $wp_customize, 'end_body_section', 'textarea', "cyn_end_body_code_$i", "کد سفارشی $i" );
+			}
 		}
 	}
 }

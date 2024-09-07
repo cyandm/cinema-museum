@@ -37,8 +37,8 @@ global $product; ?>
 	<div id="product-<?php the_ID(); ?>"
 		 <?php wc_product_class( '', $product ); ?>>
 
-		<div class="flex flex-col md:gap-4 md:flex-row">
-			<div class="flex-1">
+		<div class="grid md:gap-4 grid-cols-3">
+			<div class="col-span-3 md:col-span-1">
 				<?php
 				/**
 				 * Hook: woocommerce_before_single_product_summary.
@@ -50,7 +50,7 @@ global $product; ?>
 				?>
 			</div>
 
-			<div class="flex-1">
+			<div class="col-span-3 md:col-span-2">
 				<?php
 				/**
 				 * Hook: woocommerce_single_product_summary.

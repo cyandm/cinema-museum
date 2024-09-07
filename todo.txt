@@ -15,6 +15,9 @@
 -- on desktop we have select option and we must be have chips
 ** cards responsive on tablet
 
+#archive course
+-- category filter is not working
+
 #single video
 -- add multiple video and play
 -- on download markup in video (new feature)

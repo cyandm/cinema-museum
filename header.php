@@ -11,7 +11,7 @@
 		<?php wp_head() ?>
 	</head>
 
-	<body <?php body_class( 'bg-black text-white bg-repeat data-[popup=true]:overflow-hidden' ) ?>
+	<body <?php body_class( 'bg-stone-900 text-white bg-repeat data-[popup=true]:overflow-hidden' ) ?>
 		  data-popup="false"
 		  style="background-image:url('<?php echo get_option( 'body_bg', '' ) ?>')">
 		<?php wp_body_open() ?>

@@ -36,7 +36,7 @@ if ( $post_type === CYN_PODCAST_POST_TYPE ) {
 $query = new WP_Query( [ 
 	'post_type' => $post_type,
 	'posts_per_page' => 4,
-	'posts__in' => $selected_posts,
+	'post__in' => $selected_posts,
 ] );
 ?>
 
@@ -49,7 +49,7 @@ $query = new WP_Query( [
 	 ">
 
 	<div
-		 class="bg-[image:var(--bg-mobile-url)] md:bg-[image:var(--bg-desktop-url)] bg-no-repeat bg-cover px-6 py-12 grid gap-4 rounded-2xl after:absolute after:inset-0 after:bg-gradient-to-l after:from-black after:from-30% after:to-transparent after:rounded-[inherit] relative after:opacity-50 after:-z-10 isolate">
+		 class="bg-[image:var(--bg-mobile-url)] md:bg-[image:var(--bg-desktop-url)] bg-no-repeat bg-cover px-6 py-12 grid gap-4 rounded-2xl after:absolute after:inset-0 after:bg-gradient-to-l after:from-black after:from-30% after:to-transparent after:rounded-[inherit] relative after:-z-10 isolate">
 
 		<div class="text-3xl">
 			<?php echo $title ?>
@@ -79,7 +79,7 @@ $query = new WP_Query( [
 
 		</div>
 
-		<div class="flex gap-2 overflow-auto mt-3">
+		<div class="flex gap-4 overflow-auto mt-3">
 			<?php
 			if ( $query->have_posts() ) :
 				while ( $query->have_posts() ) :

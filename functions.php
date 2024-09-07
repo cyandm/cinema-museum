@@ -12,6 +12,7 @@ require_once( CYN_THEME_DIR . '/inc/classes/cyn-rest.php' );
 require_once( CYN_THEME_DIR . '/inc/classes/cyn-meta.php' );
 require_once( CYN_THEME_DIR . '/inc/classes/cyn-search.php' );
 require_once( CYN_THEME_DIR . '/inc/classes/cyn-woocommerce.php' );
+require_once( CYN_THEME_DIR . '/inc/classes/cyn-custom-code.php' );
 
 
 //functions
@@ -25,10 +26,11 @@ require_once( CYN_THEME_DIR . '/inc/functions/cyn-acf-fields.php' );
 require_once( CYN_THEME_DIR . '/inc/functions/cyn-acf.php' );
 
 //instance classes
-new cyn_theme_init( false, '0.0.0' );
+new cyn_theme_init( true, '1.0.1' );
 new cyn_register();
 new cyn_customize();
 new cyn_rest();
 new cyn_meta();
 new cyn_search();
 new cyn_woocommerce();
+new cyn_custom_code();

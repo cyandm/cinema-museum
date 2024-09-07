@@ -10,6 +10,9 @@ class cyn_woocommerce {
 		add_action( 'woocommerce_breadcrumb_defaults', [ $this, 'customize_breadcrumb' ], 10 );
 		add_action( 'woocommerce_product_loop_title_classes', [ $this, 'change_loop_title_classes' ] );
 
+		add_filter( 'woocommerce_billing_fields', [ $this, 'cyn_checkout_fields' ] );
+		add_filter( 'woocommerce_account_menu_items', [ $this, 'customize_dashboard_nav' ], 10, 2 );
+
 
 	}
 
@@ -69,4 +72,61 @@ class cyn_woocommerce {
 	public function change_loop_title_classes() {
 		return 'text-2xl';
 	}
+
+	function cyn_checkout_fields( $fields ) {
+
+		unset( $fields['billing_country'] );
+		unset( $fields['billing_company'] );
+		unset( $fields['billing_city'] );
+		unset( $fields['billing_state'] );
+		unset( $fields['billing_address_1'] );
+		unset( $fields['billing_address_2'] );
+		unset( $fields['billing_postcode'] );
+
+		$fields['billing_email']['required'] = false;
+
+		return $fields;
+	}
+
+	function customize_dashboard_nav( $items, $endpoints ) {
+		unset( $items['edit-address'] );
+		unset( $items['dashboard'] );
+
+
+		$new_items = [];
+
+		foreach ( $items as $key => $label ) {
+			$new_item = [ 
+				'endpoint' => $key,
+				'label' => $label,
+				'icon' => '',
+			];
+
+
+			if ( $key === 'orders' ) {
+				$new_item['icon'] = '#icon-time-clock';
+			}
+
+			if ( $key === 'downloads' ) {
+				$new_item['icon'] = '#icon-Record,-Videos,-Camera';
+			}
+
+			if ( $key === 'edit-account' ) {
+				$new_item['icon'] = '#icon-User,-Profile';
+			}
+
+			if ( $key === 'customer-logout' ) {
+				$new_item['icon'] = '#icon-arrow-door-out-3';
+			}
+
+
+
+			array_push( $new_items, $new_item );
+		}
+
+		return $new_items;
+
+	}
+
 }
+

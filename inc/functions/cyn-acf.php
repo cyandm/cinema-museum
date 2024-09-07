@@ -29,7 +29,8 @@ function cyn_register_acf_video() {
 		cyn_acf_add_number( 'rate', 'امتیاز', 0, '', 'از 10' ),
 		cyn_acf_add_text( 'duration', 'مدت زمان فیلم' ),
 		cyn_acf_add_file( 'file', 'فایل مربوطه' ),
-		cyn_acf_add_post_object( 'related_videos', 'ویدئوهای مرتبط', CYN_VIDEO_POST_TYPE ),
+		cyn_acf_add_image( 'file_poster', 'پوستر ویدئو' ),
+		cyn_acf_add_post_object( 'related_videos', 'ویدئوهای مرتبط', CYN_VIDEO_POST_TYPE, '', 1 ),
 	];
 	$location = [ 
 		[ 

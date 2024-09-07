@@ -2,7 +2,7 @@
 
 <?php get_header( null, [ 'render_template' => false ] ) ?>
 
-<div class="flex gap-2">
+<div class="flex">
 
 	<div class="hidden lg:block">
 		<?php cyn_get_part( '/sidebar/home' ) ?>

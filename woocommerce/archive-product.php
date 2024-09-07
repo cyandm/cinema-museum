@@ -28,15 +28,26 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 
-/**
- * Hook: woocommerce_shop_loop_header.
- *
- * @since 8.6.0
- *
- * @hooked woocommerce_product_taxonomy_archive_header - 10
- */
-do_action( 'woocommerce_shop_loop_header' );
+cyn_get_page( '/archive/hero', [ 'field_name' => 'archive_products_img' ] );
+echo '<div class="py-4"></div>';
+// cyn_get_page( '/archive/category', [ 'taxonomy' => 'product_cat', 'post-type' => 'product', 'title' => 'دسته بندی' ] );
+// echo '<div class="py-4"></div>';
 
+
+?>
+<div class="text-2xl mb-2">
+	<?php
+	/**
+	 * Hook: woocommerce_shop_loop_header.
+	 *
+	 * @since 8.6.0
+	 *
+	 * @hooked woocommerce_product_taxonomy_archive_header - 10
+	 */
+	do_action( 'woocommerce_shop_loop_header' );
+	?>
+</div>
+<?php
 if ( woocommerce_product_loop() ) {
 
 	/**
@@ -46,7 +57,7 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	// do_action( 'woocommerce_before_shop_loop' );
 
 	woocommerce_product_loop_start();
 
@@ -92,6 +103,6 @@ do_action( 'woocommerce_after_main_content' );
  *
  * @hooked woocommerce_get_sidebar - 10
  */
-do_action( 'woocommerce_sidebar' );
+// do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );

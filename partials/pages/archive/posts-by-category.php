@@ -20,6 +20,7 @@ usort( $terms, 'sort_terms' );
 	<?php foreach ( $terms as $index => $term ) :
 		$posts = get_posts( [ 
 			'post_type' => $post_type,
+			'posts_per_page' => -1,
 			'tax_query' => [ 
 				[ 
 					'taxonomy' => $tax_name,
@@ -66,7 +67,7 @@ usort( $terms, 'sort_terms' );
 					<?php endforeach; ?>
 				</swiper-container>
 			<?php else : ?>
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 ">
+				<div class="grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 ">
 					<?php foreach ( $posts as $index => $post ) : ?>
 						<?php cyn_get_card( $post_type, [ 'post-id' => $post->ID ] ) ?>
 					<?php endforeach; ?>

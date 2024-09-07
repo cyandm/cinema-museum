@@ -15,7 +15,7 @@ if ( $post_type === CYN_VIDEO_POST_TYPE ) {
 <a href="<?php echo get_permalink( $post_id ) ?>"
    class="group rounded-xl overflow-hidden <?php echo $options['is_responsive'] ? 'max-sm:hidden' : '' ?>">
 	<div class="h-80 min-w-80 bg-cover rounded-xl p-4 flex flex-col justify-end after:content-[''] relative after:absolute after:inset-0 after:bg-gradient-to-t after:from-black after:from-30% after:to-transparent after:opacity-50 after:-z-10 isolate group-hover:after:opacity-30 after:transition-all after:duration-300"
-		 style="background-image: url('<?php echo get_the_post_thumbnail_url( $post_id ) ?>');">
+		 style="background-image: url('<?php echo get_the_post_thumbnail_url( $post_id, [ 800, 800 ] ) ?>');">
 
 
 		<div class="grid gap-2">
@@ -24,20 +24,25 @@ if ( $post_type === CYN_VIDEO_POST_TYPE ) {
 			<div class="flex items-center justify-between">
 				<div class="space-y-2">
 					<?php if ( $post_type === CYN_VIDEO_POST_TYPE ) : ?>
-						<div class="flex gap-1 items-center">
-							<svg class="icon text-yellow-400">
-								<use href="#icon-star-fill" />
-							</svg>
-							<span class="text-sm"><?php echo get_field( 'rate', $post_id ) ?></span>
-						</div>
+						<?php if ( ! empty( get_field( 'rate', $post_id ) ) ) : ?>
+							<div class="flex gap-1 items-center">
+								<svg class="icon size-4 text-yellow-400">
+									<use href="#icon-star-fill" />
+								</svg>
+								<span class="text-sm"><?php echo get_field( 'rate', $post_id ) ?></span>
+							</div>
+						<?php endif ?>
 					<?php endif; ?>
 
-					<div class="flex gap-1 items-center">
-						<svg class="icon">
-							<use href="#icon-time-clock" />
-						</svg>
-						<span class="text-sm"><?php echo get_field( 'duration', $post_id ) ?></span>
-					</div>
+					<?php if ( ! empty( get_field( 'rate', $post_id ) ) ) : ?>
+						<div class="flex gap-1 items-center">
+							<svg class="icon size-4">
+								<use href="#icon-time-clock" />
+							</svg>
+							<span class="text-sm"><?php echo get_field( 'duration', $post_id ) ?></span>
+						</div>
+					<?php endif ?>
+
 				</div>
 
 				<div>
