@@ -1,0 +1,9 @@
+@version 1.0.1.1
+-- NEW : 
+. add map to footer => partials/parts/footer/items.php
+
+-- EDIT : 
+. change footer column position. => partials/parts/footer/items.php
+
+-- FIXED : 
+. responsive issue. => partials/pages/single/related.php
