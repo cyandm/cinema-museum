@@ -1,3 +1,7 @@
+@version 1.0.1.2
+-- FIXED:
+. add customize panel for address in footer
+
 @version 1.0.1.1
 -- NEW : 
 . add map to footer => partials/parts/footer/items.php

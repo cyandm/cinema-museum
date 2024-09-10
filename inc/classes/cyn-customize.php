@@ -215,6 +215,18 @@ if ( ! class_exists( 'cyn_customize' ) ) {
 				$this->cyn_add_control( $wp_customize, 'social_media', 'text', "social_media_link_$i", "لینک شبکه اجتماعی $i" );
 			}
 
+			$wp_customize->add_section(
+				'map',
+				[ 
+					'title' => 'نقشه',
+					'priority' => 1,
+					'panel' => 'footer'
+				]
+			);
+
+			$this->cyn_add_control( $wp_customize, 'map', 'textarea', 'map_iframe', 'کد embed نقشه', 'کد را از گوگل مپ دریافت کنید' );
+
+
 
 		}
 

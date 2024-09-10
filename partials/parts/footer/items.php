@@ -69,13 +69,7 @@ $footer_col_2 = cyn_get_menu_items_by_slug( CYN_FOOTER_2 ) ?? [];
 	<div class="col-span-5 md:col-span-2 md:pl-28 max-md:mt-6  ">
 		<div
 			 class="h-full w-full [&_iframe]:w-full [&_iframe]:h-full [&_iframe]:rounded-lg [&_iframe]:grayscale [&_iframe]:hover:grayscale-0 [&_iframe]:transition-all">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25917.138252585497!2d51.420469700000005!3d35.7104195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e03d6294b64b9%3A0xa346921d370e2c4b!2sSajjad%20Hospital!5e0!3m2!1sen!2s!4v1725970020454!5m2!1sen!2s"
-					width="600"
-					height="450"
-					style="border:0;"
-					allowfullscreen=""
-					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<?php echo get_option( 'map_iframe' ) ?>
 		</div>
 	</div>
 </div>
