@@ -52,7 +52,7 @@ $is_login = is_user_logged_in();
 		</form>
 
 		<div class="primary-btn flex gap-2 group relative">
-			<a href="#">
+			<a href="<?php echo $is_login ? '#' : wc_get_account_endpoint_url( '' ) ?>">
 				<?php $is_login ? _e( 'حساب کاربری', 'cyn-dm' ) : _e( 'ورود / ثبت نام', 'cyn-dm' ) ?>
 			</a>
 			<?php echo $is_login ? '<svg class="icon size-4 group-hover:rotate-180 transition-transform"><use href="#icon-chevron-down"/></svg>' : '' ?>

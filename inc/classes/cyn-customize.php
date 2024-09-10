@@ -171,6 +171,9 @@ if ( ! class_exists( 'cyn_customize' ) ) {
 
 
 
+
+
+
 			$wp_customize->add_section(
 				'footer_col_3',
 				[ 
@@ -180,8 +183,9 @@ if ( ! class_exists( 'cyn_customize' ) ) {
 				]
 			);
 
-			$this->cyn_add_control( $wp_customize, 'footer_col_3', 'text', 'footer_column_3_title', 'عنوان', 'پیش فرض: آدرس' );
-			$this->cyn_add_control( $wp_customize, 'footer_col_3', 'text', 'footer_column_3_text', 'متن', 'پیش فرض: آدرس' );
+			$this->cyn_add_control( $wp_customize, 'footer_col_3', 'text', 'footer_column_3_title', 'عنوان', 'پیش فرض: شماره تماس' );
+			$this->cyn_add_control( $wp_customize, 'footer_col_3', 'text', 'footer_column_3_link', 'لینک', 'پیش فرض:لینک شماره تماس' );
+			$this->cyn_add_control( $wp_customize, 'footer_col_3', 'text', 'footer_column_3_text', 'متن', 'پیش فرض:متن شماره تماس' );
 
 
 			$wp_customize->add_section(
@@ -193,9 +197,8 @@ if ( ! class_exists( 'cyn_customize' ) ) {
 				]
 			);
 
-			$this->cyn_add_control( $wp_customize, 'footer_col_4', 'text', 'footer_column_4_title', 'عنوان', 'پیش فرض: شماره تماس' );
-			$this->cyn_add_control( $wp_customize, 'footer_col_4', 'text', 'footer_column_4_link', 'لینک', 'پیش فرض:لینک شماره تماس' );
-			$this->cyn_add_control( $wp_customize, 'footer_col_4', 'text', 'footer_column_4_text', 'متن', 'پیش فرض:متن شماره تماس' );
+			$this->cyn_add_control( $wp_customize, 'footer_col_4', 'text', 'footer_column_4_title', 'عنوان', 'پیش فرض: آدرس' );
+			$this->cyn_add_control( $wp_customize, 'footer_col_4', 'text', 'footer_column_4_text', 'متن', 'پیش فرض: آدرس' );
 
 
 			$wp_customize->add_section(

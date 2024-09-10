@@ -24,7 +24,7 @@ $login_menu = cyn_get_menu_items_by_slug( CYN_LOGIN_MENU );
 		</a>
 
 		<div class="primary-btn flex gap-2 group relative">
-			<a href="#">
+			<a href="<?php echo $is_login ? '#' : wc_get_account_endpoint_url( '' ) ?>">
 				<?php $is_login ? _e( 'حساب کاربری', 'cyn-dm' ) : _e( 'ورود / ثبت نام', 'cyn-dm' ) ?>
 			</a>
 

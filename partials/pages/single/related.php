@@ -48,7 +48,9 @@ if ( empty( $related ) ) {
 		<div class="flex gap-4 overflow-auto">
 
 			<?php foreach ( $related as $index => $post ) : ?>
-				<?php cyn_get_card( 'general', [ 'post-id' => $post, 'post-type' => $post_type, 'is_responsive' => false ] ) ?>
+				<div class="min-w-80">
+					<?php cyn_get_card( 'general', [ 'post-id' => $post, 'post-type' => $post_type, 'is_responsive' => false ] ) ?>
+				</div>
 			<?php endforeach; ?>
 		</div>
 	</div>

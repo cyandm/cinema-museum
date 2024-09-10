@@ -3,7 +3,6 @@
 -- loading via animation
 
 #header 
--- sign in / log in link
 ** mobile menu close via click on out
 -- search on mobile is not correct to figma
 

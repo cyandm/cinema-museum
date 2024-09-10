@@ -1246,6 +1246,14 @@ input:-webkit-autofill,
   bottom: -2rem;
 }
 
+.-right-8 {
+  right: -2rem;
+}
+
+.-top-8 {
+  top: -2rem;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -1298,22 +1306,6 @@ input:-webkit-autofill,
   top: 1rem;
 }
 
-.-right-4 {
-  right: -1rem;
-}
-
-.-top-4 {
-  top: -1rem;
-}
-
-.-right-8 {
-  right: -2rem;
-}
-
-.-top-8 {
-  top: -2rem;
-}
-
 .isolate {
   isolation: isolate;
 }
@@ -1334,8 +1326,28 @@ input:-webkit-autofill,
   z-index: 50;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.col-span-5 {
+  grid-column: span 5 / span 5;
+}
+
+.col-start-1 {
+  grid-column-start: 1;
+}
+
+.col-end-3 {
+  grid-column-end: 3;
 }
 
 .my-10 {
@@ -1524,6 +1536,10 @@ input:-webkit-autofill,
   min-width: 20rem;
 }
 
+.min-w-72 {
+  min-width: 18rem;
+}
+
 .max-w-80 {
   max-width: 20rem;
 }
@@ -1654,6 +1670,10 @@ input:-webkit-autofill,
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-rows-\[0fr\] {
@@ -1903,6 +1923,11 @@ input:-webkit-autofill,
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 .bg-stone-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(41 37 36 / var(--tw-bg-opacity));
@@ -1941,6 +1966,11 @@ input:-webkit-autofill,
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-\[image\:var\(--bg-mobile-url\)\] {
@@ -2112,6 +2142,18 @@ input:-webkit-autofill,
 
 .pr-4 {
   padding-right: 1rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.pl-12 {
+  padding-left: 3rem;
+}
+
+.pl-28 {
+  padding-left: 7rem;
 }
 
 .text-center {
@@ -2661,6 +2703,10 @@ input:-webkit-autofill,
 }
 
 @media not all and (min-width: 768px) {
+  .max-md\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
   .max-md\:hidden {
     display: none;
   }
@@ -2702,6 +2748,10 @@ input:-webkit-autofill,
 
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .md\:col-span-3 {
+    grid-column: span 3 / span 3;
   }
 
   .md\:hidden {
@@ -2747,6 +2797,10 @@ input:-webkit-autofill,
 
   .md\:bg-\[image\:var\(--bg-desktop-url\)\] {
     background-image: var(--bg-desktop-url);
+  }
+
+  .md\:pl-28 {
+    padding-left: 7rem;
   }
 }
 
@@ -3055,6 +3109,39 @@ input:-webkit-autofill,
 .\[\&_h3\]\:text-3xl h3 {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.\[\&_iframe\]\:h-full iframe {
+  height: 100%;
+}
+
+.\[\&_iframe\]\:w-full iframe {
+  width: 100%;
+}
+
+.\[\&_iframe\]\:rounded-lg iframe {
+  border-radius: 0.5rem;
+}
+
+.\[\&_iframe\]\:grayscale iframe {
+  --tw-grayscale: grayscale(100%);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.\[\&_iframe\]\:transition-all iframe {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+}
+
+.\[\&_iframe\]\:hover\:grayscale-0:hover iframe {
+  --tw-grayscale: grayscale(0);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .\[\&_p\]\:mt-2 p {
