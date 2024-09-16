@@ -1,8 +1,8 @@
 <?php $home_page_sidebar_menu = cyn_get_menu_items_by_slug( CYN_HOMEPAGE_SIDEBAR ) ?>
 
-<div class="min-w-56">
-	<div class="fixed min-w-56 bg-white/10 backdrop-blur-lg right-0 h-full px-5 z-30">
-		<div class="flex flex-col items-center gap-2 justify-center py-3">
+<div class="min-w-56 h-full relative">
+	<div class="min-w-56 bg-white/10 backdrop-blur-lg top-0 px-5 z-30 sticky py-3 h-screen">
+		<div class="flex flex-col items-center gap-2 justify-center py-3 ">
 			<div>
 				<?php the_custom_logo() ?>
 			</div>
