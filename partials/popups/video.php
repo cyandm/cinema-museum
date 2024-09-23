@@ -1,9 +1,10 @@
 <?php
 $id = $args['post-id'] ?? '';
-$audio = get_field( 'file', $id );
+$acf_field = $args['acf-field'] ?? '';
+$video = get_field( $acf_field, $id );
 $poster = get_field( 'file_poster', $id );
 
-if ( ! $audio )
+if ( ! $video )
 	return;
 ?>
 
@@ -18,18 +19,23 @@ if ( ! $audio )
 	<video class="plyr-js"
 		   playsinline
 		   controls
+		   autoplay
 		   data-poster="<?php echo wp_get_attachment_url( $poster ) ?>">
 
-		<source src="<?php echo $audio['url'] ?> "
-				type="<?php echo $audio['mime_type'] ?>" />
+		<source src="<?php echo $video['url'] ?> "
+				type="<?php echo $video['mime_type'] ?>" />
 
 	</video>
 
 
-	<div class="absolute -bottom-8 right-4">
+
+	<div class="absolute -bottom-16 right-0">
 
 		<div class="grid">
 			<span class="text-lg"><?php echo get_the_title( $id ) ?></span>
 		</div>
 	</div>
+
+
+
 </div>

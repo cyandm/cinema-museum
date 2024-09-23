@@ -1,6 +1,13 @@
+<?php
+if ( false == get_field( 'other_links_activate' ) ) {
+	return;
+}
+
+?>
+
 <div class="container grid gap-8">
 	<div class="text-4xl text-center">
-		<?php _e( 'دیگر پلتفرم های ما', 'cyn-dm' ) ?>
+		<?php _e( 'دیگر لینک های ما', 'cyn-dm' ) ?>
 	</div>
 
 	<div class="grid gap-2">

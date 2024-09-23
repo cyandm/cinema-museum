@@ -1,9 +1,8 @@
 <?php
 $id = $args['post-id'] ?? '';
-$audio = get_field( 'file', $id );
-// $poster = get_field( 'file_poster', $id );
+$video = get_field( 'file', $id );
 
-if ( ! $audio )
+if ( ! $video )
 	return;
 ?>
 
@@ -17,8 +16,8 @@ if ( ! $audio )
 
 	<audio class="plyr-js"
 		   controls>
-		<source src="<?php echo $audio['url'] ?> "
-				type="<?php echo $audio['mime_type'] ?>" />
+		<source src="<?php echo $video['url'] ?> "
+				type="<?php echo $video['mime_type'] ?>" />
 	</audio>
 
 

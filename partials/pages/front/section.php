@@ -1,6 +1,9 @@
 <?php
 $index = $args['index'];
 
+$is_familiar_meeting = $index === 'familiar_meeting' ? true : false;
+
+
 $is_active = get_field( "is_active_$index" );
 
 
@@ -42,7 +45,7 @@ $query = new WP_Query( [
 
 
 <div id="<?php echo $id ?>"
-	 class="container "
+	 class="container mb-9"
 	 style="
 	 --bg-desktop-url: url('<?php echo wp_get_attachment_image_url( $desktop_banner, 'full', false ) ?>'); 
 	 --bg-mobile-url: url('<?php echo wp_get_attachment_image_url( $mobile_banner, 'full', false ) ?>'); 
@@ -51,7 +54,7 @@ $query = new WP_Query( [
 	<div
 		 class="bg-[image:var(--bg-mobile-url)] md:bg-[image:var(--bg-desktop-url)] bg-no-repeat bg-cover px-6 py-12 grid gap-4 rounded-2xl after:absolute after:inset-0 after:bg-gradient-to-l after:from-black after:from-30% after:to-transparent after:rounded-[inherit] relative after:-z-10 isolate">
 
-		<div class="text-3xl">
+		<div class="<?php echo $is_familiar_meeting ? 'text-5xl' : 'text-4xl' ?>">
 			<?php echo $title ?>
 		</div>
 
@@ -63,36 +66,47 @@ $query = new WP_Query( [
 			<?php echo $description ?>
 		</div>
 
+		<?php if ( $is_familiar_meeting ) : ?>
+			<div class="max-w-[65ch]">
+				<a href="<?php echo $link ?>"
+				   class="primary-btn justify-center">
+					مشاهده دیدار
+				</a>
+			</div>
+		<?php endif; ?>
+
 	</div>
 
-	<div class="my-4">
-		<div class="flex justify-between">
-			<div class="text-2xl">
-				<?php echo $label ?>
+	<?php if ( false === $is_familiar_meeting ) : ?>
+		<div class="mt-4">
+			<div class="flex justify-between">
+				<div class="text-2xl">
+					<?php echo $label ?>
+				</div>
+
+
+				<a href="<?php echo $link ?>"
+				   class="px-4 py-2 bg-white/15 rounded-full hover:bg-white/25 transition-colors">
+					<?php _e( 'مشاهده همه', 'cyn-dm' ) ?>
+				</a>
+
 			</div>
 
-
-			<a href="<?php echo $link ?>"
-			   class="px-4 py-2 bg-white/15 rounded-full hover:bg-white/25 transition-colors">
-				<?php _e( 'مشاهده همه', 'cyn-dm' ) ?>
-			</a>
-
+			<div class="flex gap-4 overflow-auto mt-3">
+				<?php
+				if ( $query->have_posts() ) :
+					while ( $query->have_posts() ) :
+						$query->the_post();
+						?>
+						<div class="">
+							<?php cyn_get_card( $post_type, [ 'is_responsive' => false ] ); ?>
+						</div>
+						<?php
+					endwhile;
+				endif;
+				wp_reset_postdata();
+				?>
+			</div>
 		</div>
-
-		<div class="flex gap-4 overflow-auto mt-3">
-			<?php
-			if ( $query->have_posts() ) :
-				while ( $query->have_posts() ) :
-					$query->the_post();
-					?>
-					<div class="">
-						<?php cyn_get_card( $post_type, [ 'is_responsive' => false ] ); ?>
-					</div>
-					<?php
-				endwhile;
-			endif;
-			wp_reset_postdata();
-			?>
-		</div>
-	</div>
+	<?php endif; ?>
 </div>

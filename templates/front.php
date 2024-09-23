@@ -12,7 +12,7 @@
 		<?php
 		cyn_get_part( '/header/template' );
 
-
+		cyn_get_page( '/front/section', [ 'index' => 'familiar_meeting' ] );
 
 		for ( $i = 1; $i <= 10; $i++ ) {
 			cyn_get_page( '/front/section', [ 'index' => $i ] );

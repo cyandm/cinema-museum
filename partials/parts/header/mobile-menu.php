@@ -28,7 +28,7 @@ $mobile_menu = cyn_get_menu_items_by_slug( CYN_MOBILE_MENU );
 		<?php foreach ( $mobile_menu as $index => $menu_item ) : ?>
 			<div class="group">
 				<a href="<?php echo $menu_item->url ?>"
-				   class="flex justify-between items-center p-2 rounded-md bg-stone-950 text-white/65 hover:text-white hover:bg-stone-900">
+				   class="flex justify-between items-center p-2 rounded-md bg-stone-950 text-white/65 hover:text-white hover:bg-stone-900 border-b border-stone-700">
 					<?php echo $menu_item->title ?>
 					<?php echo $menu_item->child_items ? '<svg class="icon size-4 group-hover:rotate-180 transition-transform"><use href="#icon-chevron-down"/></svg>' : '' ?>
 				</a>

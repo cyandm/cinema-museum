@@ -96,9 +96,10 @@ class cyn_rest {
 
 		$res = new WP_REST_Response();
 		$id = $request->get_body_params()['id'];
+		$acf_filed = $request->get_body_params()['acfField'];
 
 		ob_start();
-		cyn_get_popup( 'video', [ 'post-id' => $id ] );
+		cyn_get_popup( 'video', [ 'post-id' => $id, 'acf-field' => $acf_filed ] );
 		$innerHTML = ob_get_clean();
 
 		$res->set_data( [ 'innerHTML' => $innerHTML ] );

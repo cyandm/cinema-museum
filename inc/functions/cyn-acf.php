@@ -26,12 +26,18 @@ function cyn_register_acf() {
 
 function cyn_register_acf_video() {
 	$fields = [ 
+		cyn_acf_add_tab( 'تنظیمات عمومی' ),
 		cyn_acf_add_number( 'rate', 'امتیاز', 0, '', 'از 10' ),
 		cyn_acf_add_text( 'duration', 'مدت زمان فیلم' ),
-		cyn_acf_add_file( 'file', 'فایل مربوطه' ),
-		cyn_acf_add_image( 'file_poster', 'پوستر ویدئو' ),
 		cyn_acf_add_post_object( 'related_videos', 'ویدئوهای مرتبط', CYN_VIDEO_POST_TYPE, '', 1 ),
+		cyn_acf_add_tab( 'فایل ها' ),
+		cyn_acf_add_image( 'file_poster', 'پوستر ویدئو' ),
 	];
+
+	for ( $i = 1; $i <= 10; $i++ ) {
+		array_push( $fields, cyn_acf_add_file( "file_$i", "فایل شماره $i" ) );
+	}
+
 	$location = [ 
 		[ 
 			[ 
@@ -160,6 +166,7 @@ function cyn_register_acf_about_us() {
 	}
 
 	array_push( $fields, cyn_acf_add_tab( 'دیگر پلتفرم ها' ) );
+	array_push( $fields, cyn_acf_add_boolean( 'other_links_activate', 'فعال / غیرفعال' ) );
 
 	for ( $i = 1; $i <= 3; $i++ ) {
 		array_push( $fields, cyn_acf_add_url( "link_$i", "لینک $i" ) );
@@ -180,7 +187,17 @@ function cyn_register_acf_about_us() {
 }
 
 function cyn_register_acf_front() {
-	$fields = [];
+	$fields = [ 
+		cyn_acf_add_tab( 'دیدار آشنا' ),
+		cyn_acf_add_text( "id_familiar_meeting", 'آیدی بخش دیدار آشنا' ),
+		cyn_acf_add_boolean( 'is_active_familiar_meeting', 'فعال / غیرفعال' ),
+		cyn_acf_add_text( 'title_familiar_meeting', 'عنوان' ),
+		cyn_acf_add_text( "subtitle_familiar_meeting", 'عنوان فرعی' ),
+		cyn_acf_add_wysiwyg( "description_familiar_meeting", 'توضیحات' ),
+		cyn_acf_add_image( "desktop_banner_familiar_meeting", "بنر دسکتاپ " ),
+		cyn_acf_add_image( "mobile_banner_familiar_meeting", "بنر موبایل " ),
+		cyn_acf_add_url( "link_familiar_meeting", "لینک" )
+	];
 
 	for ( $i = 1; $i <= 10; $i++ ) {
 		array_push( $fields, cyn_acf_add_tab( "بخش $i" ) );

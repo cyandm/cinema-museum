@@ -26,24 +26,28 @@ if ( $post_type === CYN_VIDEO_POST_TYPE ) {
 		</h1>
 
 		<?php if ( $post_type === CYN_VIDEO_POST_TYPE ) : ?>
-			<div class="py-2"></div>
+			<?php if ( get_field( 'rate', $post_id ) ) : ?>
+				<div class="py-2"></div>
 
-			<div class="flex gap-1 items-center">
-				<svg class="icon text-yellow-400">
-					<use href="#icon-star-fill" />
-				</svg>
-				<span><?php echo get_field( 'rate', $post_id ) ?></span>
-			</div>
+				<div class="flex gap-1 items-center">
+					<svg class="icon text-yellow-400">
+						<use href="#icon-star-fill" />
+					</svg>
+					<span><?php echo get_field( 'rate', $post_id ) ?></span>
+				</div>
+			<?php endif; ?>
 		<?php endif; ?>
 
 		<div class="py-2"></div>
 
-		<div class="flex gap-1 items-center">
-			<svg class="icon">
-				<use href="#icon-time-clock" />
-			</svg>
-			<span><?php echo get_field( 'duration', $post_id ) ?></span>
-		</div>
+		<?php if ( get_field( 'duration', $post_id ) ) : ?>
+			<div class="flex gap-1 items-center">
+				<svg class="icon">
+					<use href="#icon-time-clock" />
+				</svg>
+				<span><?php echo get_field( 'duration', $post_id ) ?></span>
+			</div>
+		<?php endif; ?>
 
 		<div class="py-2"></div>
 
@@ -53,13 +57,18 @@ if ( $post_type === CYN_VIDEO_POST_TYPE ) {
 
 		<div class="py-2"></div>
 
-		<div class="flex">
-			<a id="playBtn"
-			   data-post-id="<?php echo get_the_ID() ?>"
-			   class="primary-btn px-8"
-			   href="#">
-				<?php echo $labels['download'] ?>
-			</a>
+		<div class="flex flex-wrap gap-1">
+			<?php for ( $i = 1; $i <= 10; $i++ ) :
+				if ( empty( get_field( "file_$i" ) ) )
+					continue;
+				?>
+				<a data-post-id="<?php echo get_the_ID() ?>"
+				   data-acf-filed="<?php echo "file_$i" ?>"
+				   class="playBtn | primary-btn px-8"
+				   href="#">
+					<?php echo $labels['download'] . ' ' . "قسمت $i" ?>
+				</a>
+			<?php endfor; ?>
 		</div>
 	</div>
 
