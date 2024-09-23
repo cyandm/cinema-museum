@@ -276,3 +276,10 @@
 		@apply !bg-white/15 !text-white !font-light;
 	}
 }
+
+@layer base {
+	.custom-logo {
+		max-width: 150px;
+		max-height: 150px;
+	}
+}
