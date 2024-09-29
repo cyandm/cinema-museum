@@ -1,6 +1,6 @@
 {
 	"name": "Cinemato",
-	"version": "1.0.1.4",
+	"version": "1.0.2",
 	"description": "",
 	"scripts": {
 		"init": "npm i esbuild gsap swiper && npm install -D tailwindcss @tailwindcss/forms @tailwindcss/typography @tailwindcss/aspect-ratio",

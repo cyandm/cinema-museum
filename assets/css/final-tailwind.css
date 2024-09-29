@@ -978,6 +978,11 @@ input:-webkit-autofill,
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
+.custom-logo {
+  max-width: 150px;
+  max-height: 150px;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1502,10 +1507,6 @@ input:-webkit-autofill,
 
 .min-h-\[90vh\] {
   min-height: 90vh;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .w-4 {
@@ -2159,6 +2160,11 @@ input:-webkit-autofill,
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2177,11 +2183,6 @@ input:-webkit-autofill,
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-bold {
