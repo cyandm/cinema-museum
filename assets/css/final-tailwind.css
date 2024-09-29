@@ -1315,6 +1315,10 @@ input:-webkit-autofill,
   top: 1rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1495,6 +1499,10 @@ input:-webkit-autofill,
 
 .h-screen {
   height: 100vh;
+}
+
+.h-2 {
+  height: 0.5rem;
 }
 
 .max-h-\[90vh\] {
@@ -2028,6 +2036,10 @@ input:-webkit-autofill,
 
 .bg-cover {
   background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
 }
 
 .bg-\[left_16px_top_0\] {
