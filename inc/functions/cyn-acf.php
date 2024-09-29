@@ -32,6 +32,7 @@ function cyn_register_acf_video() {
 		cyn_acf_add_post_object( 'related_videos', 'ویدئوهای مرتبط', CYN_VIDEO_POST_TYPE, '', 1 ),
 		cyn_acf_add_tab( 'فایل ها' ),
 		cyn_acf_add_image( 'file_poster', 'پوستر ویدئو' ),
+		cyn_acf_add_boolean( 'is_multi', 'آیا چند قسمتی است؟' ),
 	];
 
 	for ( $i = 1; $i <= 10; $i++ ) {

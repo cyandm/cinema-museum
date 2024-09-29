@@ -1,7 +1,7 @@
 <?php
 $post_id = $args['post-id'] ?? get_the_ID();
 $post_type = $args['post-type'] ?? CYN_VIDEO_POST_TYPE;
-
+$is_multi = get_field( 'is_multi', $post_id );
 
 if ( $post_type === CYN_VIDEO_POST_TYPE ) {
 	$labels = [ 
@@ -58,17 +58,29 @@ if ( $post_type === CYN_VIDEO_POST_TYPE ) {
 		<div class="py-2"></div>
 
 		<div class="flex flex-wrap gap-1">
-			<?php for ( $i = 1; $i <= 10; $i++ ) :
-				if ( empty( get_field( "file_$i" ) ) )
-					continue;
-				?>
-				<a data-post-id="<?php echo get_the_ID() ?>"
-				   data-acf-filed="<?php echo "file_$i" ?>"
-				   class="playBtn | primary-btn px-8"
-				   href="#">
-					<?php echo $labels['download'] . ' ' . "قسمت $i" ?>
-				</a>
-			<?php endfor; ?>
+			<?php if ( true === $is_multi ) : ?>
+				<?php for ( $i = 1; $i <= 10; $i++ ) :
+					if ( empty( get_field( "file_$i" ) ) )
+						continue;
+					?>
+					<a data-post-id="<?php echo get_the_ID() ?>"
+					   data-acf-filed="<?php echo "file_$i" ?>"
+					   class="playBtn | primary-btn px-8"
+					   href="#">
+						<?php echo $labels['download'] . ' ' . "قسمت $i" ?>
+					</a>
+				<?php endfor; ?>
+			<?php else :
+				if ( ! empty( get_field( "file_1" ) ) ) :
+					?>
+					<a data-post-id="<?php echo get_the_ID() ?>"
+					   data-acf-filed="<?php echo "file_1" ?>"
+					   class="playBtn | primary-btn px-8"
+					   href="#">
+						<?php echo $labels['download'] ?>
+					</a>
+				<?php endif; ?>
+			<?php endif; ?>
 		</div>
 	</div>
 
